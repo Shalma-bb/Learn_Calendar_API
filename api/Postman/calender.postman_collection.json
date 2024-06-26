@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "9eacacdb-9e95-40a8-9cd2-b9b22283516f",
+		"name": "calender",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26126042"
+	},
+	"item": [
+		{
+			"name": "oauth_token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{domain}}/learn/api/public/v1/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"learn",
+						"api",
+						"public",
+						"v1",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_calendar_item",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"Institution\",\n    \"calendarId\": \"_1_1\",\n    \"title\": \"Sample event 1\",\n    \"description\": \"Testing sample event 1\",\n    \"start\": \"2024-06-25T09:00:00.000Z\",\n    \"end\": \"2024-06-30T09:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/learn/api/public/v1/calendars/items",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"learn",
+						"api",
+						"public",
+						"v1",
+						"calendars",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calendar_items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"Institution\",\n    \"calendarId\": \"_1_1\",\n    \"title\": \"Sample event 1\",\n    \"description\": \"Testing sample event 1\",\n    \"start\": \"2024-06-25T09:00:00.000Z\",\n    \"end\": \"2024-06-30T09:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/learn/api/public/v1/calendars/items",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"learn",
+						"api",
+						"public",
+						"v1",
+						"calendars",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calendar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"Institution\",\n    \"calendarId\": \"_1_1\",\n    \"title\": \"Sample event 1\",\n    \"description\": \"Testing sample event 1\",\n    \"start\": \"2024-06-25T09:00:00.000Z\",\n    \"end\": \"2024-06-30T09:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/learn/api/public/v1/calendars/",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"learn",
+						"api",
+						"public",
+						"v1",
+						"calendars",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "by_type_and_id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"Institution\",\n    \"calendarId\": \"_1_1\",\n    \"title\": \"Sample event 1\",\n    \"description\": \"Testing sample event 1\",\n    \"start\": \"2024-06-25T09:00:00.000Z\",\n    \"end\": \"2024-06-30T09:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/learn/api/public/v1/calendars/items/{{calendaritemtype}}/{{calendaritemid}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"learn",
+						"api",
+						"public",
+						"v1",
+						"calendars",
+						"items",
+						"{{calendaritemtype}}",
+						"{{calendaritemid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "by_type_and_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"Institution\",\n    \"calendarId\": \"_1_1\",\n    \"title\": \"Sample event 1\",\n    \"description\": \"Testing sample event 1\",\n    \"start\": \"2024-06-25T09:00:00.000Z\",\n    \"end\": \"2024-06-30T09:00:00.000Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/learn/api/public/v1/calendars/items/{{calendaritemtype}}/{{calendaritemid}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"learn",
+						"api",
+						"public",
+						"v1",
+						"calendars",
+						"items",
+						"{{calendaritemtype}}",
+						"{{calendaritemid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_by_id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accesstoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"patch test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{domain}}/learn/api/public/v1/calendars/items/{{calendaritemtype}}/{{calendaritemid}}",
+					"protocol": "https",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"learn",
+						"api",
+						"public",
+						"v1",
+						"calendars",
+						"items",
+						"{{calendaritemtype}}",
+						"{{calendaritemid}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "$User_name",
+			"type": "string"
+		},
+		{
+			"key": "domain",
+			"value": "$Domain_name",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "$App_secret",
+			"type": "string"
+		},
+		{
+			"key": "accesstoken",
+			"value": "$Bearer_token",
+			"type": "string"
+		},
+		{
+			"key": "calendaritemtype",
+			"value": "$type",
+			"type": "string"
+		},
+		{
+			"key": "calendaritemid",
+			"value": "$Id",
+			"type": "string"
+		}
+	]
+}
