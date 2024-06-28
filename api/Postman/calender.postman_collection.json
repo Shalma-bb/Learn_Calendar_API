@@ -347,7 +347,7 @@
 	"variable": [
 		{
 			"key": "username",
-			"value": "$User_name",
+			"value": "$App_key",
 			"type": "string"
 		},
 		{
@@ -367,7 +367,7 @@
 		},
 		{
 			"key": "calendaritemtype",
-			"value": "$type",
+			"value": "$Type",
 			"type": "string"
 		},
 		{
